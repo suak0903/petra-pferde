@@ -121,7 +121,8 @@ p{margin:0 0 1em}
 .nav.menu-open .burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .nav.menu-open .burger span:nth-child(2){opacity:0}
 .nav.menu-open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.nav.menu-open{background:none;box-shadow:none;backdrop-filter:none;z-index:130}
+/* Bei offenem Menue fixed: body overflow:hidden (Scroll-Lock) bricht sticky, Header bliebe sonst oben im Dokument */
+.nav.menu-open{position:fixed;top:0;left:0;right:0;margin-bottom:0;background:none;box-shadow:none;backdrop-filter:none;z-index:130}
 .nav.menu-open .brand b{color:#fff}
 .nav.menu-open .brand b span{color:rgba(255,255,255,.65)}
 .brand .logo-dunkel{display:none}
