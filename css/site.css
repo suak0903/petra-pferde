@@ -75,7 +75,9 @@ p{margin:0 0 1em}
 
 /* ---------- Navigation ---------- */
 .nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+  /* sticky statt fixed: springt beim Ein-/Ausfahren der mobilen Browserleiste nicht über den Rand */
+  position:sticky;top:0;z-index:100;height:var(--nav-h);
+  margin-bottom:calc(-1 * var(--nav-h));
   display:flex;align-items:center;
   transition:background .35s var(--ease),box-shadow .35s var(--ease);
 }
