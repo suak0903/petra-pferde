@@ -252,12 +252,13 @@ p{margin:0 0 1em}
 /* Die 7 Schritte */
 .schritte{max-width:840px;margin:0 auto}
 .schritt{
-  display:grid;grid-template-columns:86px 1fr;gap:26px;align-items:baseline;
+  display:grid;grid-template-columns:106px 1fr;gap:26px;align-items:baseline;
   padding:24px 2px;border-bottom:1px solid var(--line);
 }
 .schritt:last-child{border-bottom:0}
 .schritt .nr{
   font-family:'Lora',serif;font-style:italic;font-size:34px;color:var(--salbei);line-height:1;
+  white-space:nowrap;
 }
 .schritt h3{font-size:20px;color:var(--wald);margin:0 0 8px}
 .schritt p{font-size:15.5px;color:var(--muted);margin:0}
@@ -531,7 +532,7 @@ p{margin:0 0 1em}
     mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
   .split,.ds{grid-template-columns:1fr;gap:36px}
   .split__media{min-height:320px;order:1}
-  .schritt{grid-template-columns:56px 1fr;gap:16px}
+  .schritt{grid-template-columns:82px 1fr;gap:16px}
   .schritt .nr{font-size:26px}
   .angebot{grid-template-columns:1fr;gap:8px}
   .angebot .preis{text-align:left}
