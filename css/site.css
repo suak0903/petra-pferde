@@ -122,6 +122,11 @@ p{margin:0 0 1em}
 .nav.menu-open{background:none;box-shadow:none;backdrop-filter:none;z-index:130}
 .nav.menu-open .brand b{color:#fff}
 .nav.menu-open .brand b span{color:rgba(255,255,255,.65)}
+.brand .logo-dunkel{display:none}
+.nav.scrolled .logo-hell{display:none}
+.nav.scrolled .logo-dunkel{display:block}
+.nav.menu-open .logo-hell{display:block}
+.nav.menu-open .logo-dunkel{display:none}
 
 /* Mobiles Menue: Glas auf Waldgruen */
 .mmenu{
