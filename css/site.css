@@ -416,7 +416,7 @@ p{margin:0 0 1em}
 .toc a:hover{background:rgba(255,255,255,.08);border-color:rgba(243,241,233,.55)}
 .toc .num{color:#cdb3ba;font-size:11.5px;font-weight:700;letter-spacing:.08em}
 .toc-top{
-  position:fixed;right:22px;bottom:64px;z-index:90;width:46px;height:46px;
+  position:fixed;right:12px;bottom:84px;z-index:90;width:38px;height:38px;
   background:var(--wald);border:1px solid rgba(243,241,233,.3);color:#fff;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   opacity:0;pointer-events:none;transition:opacity .3s var(--ease);
@@ -435,25 +435,43 @@ p{margin:0 0 1em}
 .chk svg{width:17px;height:17px;flex:0 0 auto;margin-top:3px}
 .chk .ok{color:#4c7a5a}
 .chk .todo{color:#b0894d}
-.scale__caps{display:flex;justify-content:space-between;gap:14px;font-size:13px;color:var(--muted);margin-bottom:14px}
-.scale__caps .mid{text-align:center}.scale__caps .end{text-align:right}
-.scale__caps b{color:var(--wald)}
-.scale__track{position:relative;height:10px;background:#e6e2d3;margin:30px 0 6px}
+/* ===== Ausbau-Skala (Suat 18.07.: Stufen positionsverankert, Labels ohne Ueberlappung) ===== */
+.scale__caps{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;font-size:12.5px;line-height:1.4;color:var(--muted);margin-bottom:10px}
+.scale__caps>span{flex:1 1 0;min-width:0}
+.scale__caps .mid{text-align:center}
+.scale__caps .end{text-align:right}
+.scale__caps b{color:var(--wald);white-space:nowrap}
+.scale__track{position:relative;height:10px;margin-top:56px;background:#e6e2d3;margin:56px 0 0}
 .scale__fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#cfc0c5,var(--mauve))}
 .scale__mk{position:absolute;top:50%}
-.scale__mk i{
-  position:absolute;left:0;top:0;transform:translate(-50%,-50%);
-  width:16px;height:16px;background:var(--white);border:3px solid var(--wald);border-radius:50%;
-}
+.scale__mk i{position:absolute;left:0;top:0;transform:translate(-50%,-50%);width:16px;height:16px;background:#fff;border:3px solid var(--wald);border-radius:50%}
 .scale__mk--rec i{border-color:var(--mauve)}
-.scale__lab{position:absolute;left:0;transform:translateX(-50%);white-space:nowrap;font-size:12.5px;font-weight:700;letter-spacing:.04em}
-.scale__mk--now .scale__lab{top:16px;color:var(--wald)}
-.scale__mk--rec .scale__lab{bottom:16px;color:var(--mauve)}
-.scale__nums{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:34px}
-.scale__why{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--ink)}
+.scale__lab{position:absolute;left:0;transform:translateX(-50%);white-space:nowrap;font-size:12.5px;font-weight:700;letter-spacing:.03em}
+/* drei getrennte Zonen - nichts liegt uebereinander */
+.scale__mk--rec .scale__lab{bottom:20px;color:var(--mauve)}
+.scale__mk--now .scale__lab{top:20px;color:var(--wald)}
+.scale__mk--ist .scale__lab{top:44px;color:var(--muted)}
+/* Randmarker: Label nach innen versetzen, damit es nicht aus dem Container laeuft */
+.scale__mk--edge-r .scale__lab{transform:translateX(-88%)}
+.scale__mk--edge-l .scale__lab{transform:translateX(-12%)}
+.scale__nums{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:74px}
+.scale--2mk .scale__nums{margin-top:52px}
+.scale__why{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;color:var(--wald)}
 .scale__why li{padding-left:16px;position:relative}
 .scale__why li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--mauve)}
-.scale__why b{color:var(--wald)}
+.scale__why b{color:var(--mauve)}
+@media(max-width:760px){
+  /* Stufen bleiben dreispaltig an der Skala verankert, nur kleiner */
+  .scale__caps{font-size:10.5px;gap:6px}
+  .scale__track{margin-top:84px}
+  .scale__lab{white-space:normal;width:96px;text-align:center;font-size:10.5px;line-height:1.25}
+  .scale__mk--edge-r .scale__lab{transform:translateX(-78%)}
+  .scale__mk--edge-l .scale__lab{transform:translateX(-22%)}
+  .scale__mk--ist .scale__lab{top:56px}
+  .scale__nums{font-size:10.5px;margin-top:100px}
+  .scale--2mk .scale__nums{margin-top:64px}
+}
+
 .ds{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .ds__sw{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .ds__c{display:flex;flex-direction:column;gap:7px;font-size:13px}
